@@ -9,17 +9,19 @@
   </head>
   <body>
     <form action="">
-      <h2>Add new</h2>
-      <input type="text" placeholder="Enter Task" />
-      <h2>When</h2>
-      <label>Today<input type="radio" name="date" value="today" /> </label>
-      <label
-        >Tomorrow<input type="radio" name="date" value="tomorrow" />
-      </label>
-      <label
-        >Select Date<input type="radio" name="date" value="selectDate" />
-      </label>
-      <input type="submit" value="Add Task" />
+      <h2 style="font-size: 2.5em">Add new</h2>
+      <input id="add-new" type="text" placeholder="Enter Task" />
+      <h3 style="margin-top: 5em; font-size: 1em">WHEN</h3>
+      <section class="radioContainer">
+        <label>Today<input type="radio" name="date" value="today" /> </label>
+        <label
+          >Tomorrow<input type="radio" name="date" value="tomorrow" />
+        </label>
+        <label
+          >Select Date<input type="radio" name="date" value="selectDate" />
+        </label>
+      </section>
+      <input class="addtaskButton" type="submit" value="Add Task" />
     </form>
   </body>
 </html>
