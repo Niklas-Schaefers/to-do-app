@@ -25,18 +25,18 @@
 form {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  margin-top: 15em;
+  margin-top: 10em;
   padding-bottom: 5em;
 }
 
 h2 {
-  font-size: 2.5em;
+  font-size: 3em;
   margin-bottom: 3em;
 }
 
 h3 {
-  font-size: 1em;
-  margin-top: 6em;
+  font-size: 2em;
+  margin-top: 4em;
 }
 
 h2,
@@ -53,15 +53,21 @@ h3,
   border-top: none;
   border-left: none;
   border-right: none;
+  padding-left: 2em;
+  width: 100%;
+  margin-bottom: 1em;
 }
 
 .radioContainer {
   display: flex;
   justify-content: center;
+  opacity: 80%;
   align-items: center;
-  gap: 6em;
+  gap: 3em;
   color: var(--headline-color);
   background-color: #f7f7f7;
+  font-size: 1.5em;
+  margin-bottom: 3em;
 }
 
 .radioContainer__input {
@@ -71,6 +77,10 @@ h3,
 
 .radioContainer__input:checked + span {
   color: var(--primary-bg-color);
+}
+
+.radioContainer__input:focus-visible + span {
+  outline: thin solid;
 }
 
 .addtaskButton {
