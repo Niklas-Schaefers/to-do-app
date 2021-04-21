@@ -24,9 +24,26 @@
 
 form {
   display: grid;
-  grid-template-rows: 10em 5em 7em 8em 10em;
-  margin-left: 2em;
-  margin-top: 7em;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  margin-top: 15em;
+  padding-bottom: 5em;
+}
+
+h2 {
+  font-size: 2.5em;
+  margin-bottom: 3em;
+}
+
+h3 {
+  font-size: 1em;
+  margin-top: 6em;
+}
+
+h2,
+#add-new,
+h3,
+.radioContainer {
+  margin-left: 6%;
 }
 
 #add-new {
@@ -42,15 +59,27 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5em;
-  margin: 2em;
+  gap: 6em;
   color: var(--headline-color);
   background-color: #f7f7f7;
+}
+
+.radioContainer__input {
+  opacity: 0;
+  position: absolute;
+}
+
+.radioContainer__input:checked + span {
+  color: var(--primary-bg-color);
 }
 
 .addtaskButton {
   color: var(--secondary-text-color);
   background-color: var(--primary-bg-color);
   border: none;
-  margin-top: 8em;
+  font-size: 1.4em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 2em;
 }
