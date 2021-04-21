@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Montserrat&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto&display=swap");
 
 :root {
   --primary-bg-color: #fe4775;
@@ -6,6 +6,9 @@
   --primary-text-color: #111111;
   --secondary-text-color: #ffffff;
   --headline-color: #393939;
+
+  --primary-font-family: "Montserrat", sans-serif;
+  --secondary-font-family: "Roboto", sans-serif;
 }
 
 *,
@@ -14,10 +17,79 @@
   box-sizing: border-box;
 }
 
-html {
-  font-size: 16px;
+* {
+  font-family: var(--primary-font-family);
+  margin: 0;
 }
 
-body {
-  background: black;
+form {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  margin-top: 10em;
+  padding-bottom: 5em;
+}
+
+h2 {
+  font-size: 3em;
+  margin-bottom: 3em;
+}
+
+h3 {
+  font-size: 2em;
+  margin-top: 4em;
+}
+
+h2,
+#add-new,
+h3,
+.radioContainer {
+  margin-left: 6%;
+}
+
+#add-new {
+  font-size: 3em;
+  opacity: 50%;
+  border-width: 0.1em;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding-left: 2em;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.radioContainer {
+  display: flex;
+  justify-content: center;
+  opacity: 80%;
+  align-items: center;
+  gap: 3em;
+  color: var(--headline-color);
+  background-color: #f7f7f7;
+  font-size: 1.5em;
+  margin-bottom: 3em;
+}
+
+.radioContainer__input {
+  opacity: 0;
+  position: absolute;
+}
+
+.radioContainer__input:checked + span {
+  color: var(--primary-bg-color);
+}
+
+.radioContainer__input:focus-visible + span {
+  outline: thin solid;
+}
+
+.addtaskButton {
+  color: var(--secondary-text-color);
+  background-color: var(--primary-bg-color);
+  border: none;
+  font-size: 1.4em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 2em;
 }
