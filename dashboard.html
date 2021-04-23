@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dashboard</title>
+    <link rel="stylesheet" href="stylesmenu.css" />
+  </head>
+  <body>
+    <main class="dashboard">
+      <input type="checkbox" id="burger" class="checkbox-group-m__input" />
+      <label class="checkbox-group-m__title" for="burger"
+        ><img src="./assets/menu.svg" alt="bell"
+      /></label>
+      <!-- start buttons top -->
+      <h2 class="dashboard__task">Tasks</h2>
+      <button class="dashboard__bell">
+        <img src="./assets/bell.svg" alt="bell" />
+      </button>
+
+      <!-- end buttons top -->
+      <!-- start block dates -->
+      <section class="radio-group">
+        <label>
+          <input
+            type="radio"
+            name="date"
+            value="today"
+            class="radio-group__input"
+          />
+          <span class="radio-group__title">TODAY</span></label
+        >
+
+        <label>
+          <input
+            type="radio"
+            name="date"
+            value="tomorrow"
+            class="radio-group__input"
+          />
+          <span class="radio-group__title">TOMORROW</span></label
+        >
+
+        <label>
+          <input
+            type="radio"
+            name="date"
+            value="selectDate"
+            class="radio-group__input"
+          />
+          <span class="radio-group__title">THIS WEEK</span></label
+        >
+      </section>
+
+      <!-- end block dates -->
+      <!-- start block tasks -->
+      <section class="checkbox-group">
+        <label>
+          <input type="checkbox" class="checkbox-group__input" />
+          <span class="checkbox-group__title"
+            >Book appointment with Jared</span
+          ></label
+        >
+
+        <label>
+          <input type="checkbox" class="checkbox-group__input" />
+          <span class="checkbox-group__title"
+            >Upload today shot on dribble</span
+          ></label
+        >
+
+        <label>
+          <input type="checkbox" class="checkbox-group__input" />
+          <span class="checkbox-group__title"
+            >Complete the elephant illustration</span
+          ></label
+        >
+        <label>
+          <input type="checkbox" class="checkbox-group__input" />
+          <span class="checkbox-group__title"
+            >Buy cake for Claire's birthday</span
+          ></label
+        >
+        <label>
+          <input type="checkbox" class="checkbox-group__input" />
+          <span class="checkbox-group__title"
+            >Attend UX conference with Jared</span
+          ></label
+        >
+        <!-- start buttons bottom -->
+
+        <!-- end buttons bottom -->
+      </section>
+      <a class="dashboard__addtask" href="/new.html"
+        ><img src="./assets/new_button.svg"
+      /></a>
+      <!-- end block checkbox -->
+
+      <section class="main-menu">
+        <h2>TASK APP</h2>
+
+        <label class="main-menu__burger" for="burger">
+          <img src="./assets/Line.svg"
+        /></label>
+
+        <ul class="main-menu__overview">
+          <li>Dashboard</li>
+          <li>Calendar</li>
+          <li>Categorize Tasks</li>
+          <li>Setting</li>
+        </ul>
+        <ul class="main-menu__about">
+          <li>About</li>
+          <li>Privacy Policy</li>
+          <li>License</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
