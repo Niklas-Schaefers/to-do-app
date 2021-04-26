@@ -34,7 +34,7 @@ body {
   grid-template-columns: auto 1fr;
   padding-left: 2em;
   padding-top: 2em;
-  column-gap: 2em;
+  column-gap: 1em;
 }
 
 .checkbox-group-m {
@@ -130,7 +130,6 @@ body {
 .main-menu {
   display: grid;
   height: 100vh;
-  grid-template-rows: minmax(3, auto);
   grid-auto-rows: minmax(min-content, max-content);
   padding-left: 2em;
   padding-top: 4em;
