@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <form class="formTaskBoard">
+      <!-- Start Menu-Button Topleft -->
+      <div class="selectMenu">
+        <img src="./assets/cartotMenu.svg" alt="" />
+        <!-- <select name="slct" id="slct">
+          <option></option>
+          <option value="1">Home</option>
+          <option value="2">Dashboard</option>
+          <option value="3">Add New</option>
+        </select> -->
+      </div>
+      <!-- End Menu-Button Topleft -->
+
+      <!-- Star H2  -->
+      <h2>Tasks</h2>
+      <!-- End H2 -->
+
+      <!-- Start bell botton -->
+      <button class="bellButton"><img src="./assets/bell.svg" alt="" /></button>
+      <!-- End bell botton -->
+
+      <!-- Start Input Vertical Radio  -->
+      <section class="radioListVertical">
+        <label>
+          <input
+            class="radioListVertical__input"
+            type="radio"
+            name="date"
+            value="selectDate"
+          />
+          <span>THIS WEEK</span>
+        </label>
+        <label>
+          <input
+            class="radioListVertical__input"
+            type="radio"
+            name="date"
+            value="selectDate"
+          />
+          <span>TOMORROW</span>
+        </label>
+        <label>
+          <input
+            class="radioListVertical__input"
+            type="radio"
+            name="date"
+            value="selectDate"
+          />
+          <span>TODAY</span>
+        </label>
+      </section>
+      <!-- End Input Vertical Radio  -->
+
+      <!-- Start Input Checkbox UL  -->
+
+      <section class="checkboxList">
+        <label
+          ><input
+            class="checkboxList__input"
+            type="checkbox"
+            name="book"
+            value="today"
+          />
+          <span>Book appoinment with</span>
+        </label>
+        <label
+          ><input
+            class="checkboxList__input"
+            type="checkbox"
+            name="upload"
+            value="selectTask"
+          />
+          <span>Upload today shot on Dribble</span>
+        </label>
+        <label
+          ><input
+            class="checkboxList__input"
+            type="checkbox"
+            name="elephant"
+            value="selectTask"
+          />
+          <span>Complete the Elephant Illustration</span>
+        </label>
+        <label
+          ><input
+            class="checkboxList__input"
+            type="checkbox"
+            name="cake"
+            value="selectTask"
+          />
+          <span>Buy Cake for Clair's Birthday</span>
+        </label>
+        <label
+          ><input
+            class="checkboxList__input"
+            type="checkbox"
+            name="date"
+            value="selectTask"
+          />
+          <span>Attend UX Conference with Jared</span>
+        </label>
+      </section>
+      <!-- End Input Checkbox UL  -->
+
+      <!-- Start plus button bottom right -->
+      <a class="buttonRightBottom" href="/new.html"
+        ><img src="./assets/plusIcon.svg" />
+      </a>
+      <!-- <img src="" alt="" /> -->
+      <!-- End Plus Button Bottom right -->
+    </form>
+  </body>
+</html>
