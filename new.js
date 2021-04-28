@@ -49,7 +49,40 @@ formElement.onsubmit = function (event) {
       dateInput: checkedDateInput.value,
     };
 
-    const taskJSON = JSON.stringify(task);
-    localStorage.setItem("task", taskJSON);
+    // const taskJSON = JSON.stringify(task);
+    // localStorage.setItem("task", taskJSON);
+
+    // Get existing taskList (localStorage.getItem, JSON.parse)
+    // const taskList - ???;
+
+    // const taskArray = JSON.parse(localStorage.getItem("taskList"));
+    // if (!taskArray) {
+    //   localStorage.setItem("taskList", "[]");
+    //   taskArray = JSON.parse(localStorage.getItem("taskList"));
+    // }
+    // // Append new task to exsiting taskList
+    // taskArray.push(task);
+
+    // // Save updated taskList (localStorage.setItem, JSON.stringify)
+    // localStorage.setItem("taskList", JSON.stringify(taskArray));
   }
+
+  function parseJSONFromLocalStorage(key) {
+    const json = localStorage.getItem(key);
+    const data = JSON.parse(json);
+    return data;
+  }
+
+  function appendToArray(item, array) {
+    return [...array, item];
+  }
+
+  function stringifyJSONToLocalStorage(key, value) {
+    const json = JSON.stringify(value);
+    localStorage.setItem(key, json);
+  }
+
+  const taskList = parseJSONFromLocalStorage("taskList");
+  const newTasklist = appendToArray(task, taskList); //[...taskList, task];
+  stringifyJSONToLocalStorage("taskList", newTasklist);
 };
