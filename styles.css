@@ -25,7 +25,7 @@
 .formNewPage {
   display: grid;
   grid-template-rows: auto auto auto auto auto;
-  /* margin-top: 10em; */
+  padding-top: 10em;
   height: 100vh;
 }
 
@@ -35,14 +35,13 @@
 }
 
 .formNewPage h3 {
-  font-size: 1.5em;
-  /* margin-top: 7em; */
+  font-size: 1.3em;
+  padding-top: 2em;
 }
 
 .formNewPage h2,
 .add-new,
-.formNewPage h3,
-.radioContainer {
+.formNewPage h3 {
   margin-left: 6%;
 }
 
@@ -60,7 +59,10 @@
   gap: 2em;
   color: var(--headline-color);
   background-color: #f7f7f7;
-  font-size: 1.1em;
+  font-size: 1em;
+  align-self: center;
+  justify-self: center;
+  padding: 1em 2em 1em 2em;
 }
 
 .radioContainer__input {
@@ -80,10 +82,12 @@
   background-color: var(--primary-bg-color);
   border: none;
   font-size: 1.4em;
+  cursor: pointer;
 }
-
+/* 
 /* 2ten PAGE */
 
+/*
 select {
   appearance: none;
   outline: 0;
@@ -112,7 +116,7 @@ body {
 }
 
 .radioListVertical {
-  /* display: grid; */
+  display: grid;
   grid-row: 3;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
@@ -121,7 +125,7 @@ body {
   color: var(--headline-color);
   justify-content: space-evenly;
   align-self: center;
-  /* padding: 4em 0em 0em 1em; */
+  padding: 4em 0em 0em 1em;
   color: rgb(205, 205, 205);
 }
 
@@ -195,4 +199,4 @@ body {
 }
 .checkboxList__input:focus-visible + span {
   outline: thin solid;
-}
+} */
