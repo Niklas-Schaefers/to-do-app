@@ -43,32 +43,33 @@ formElement.onsubmit = function (event) {
   } else if (!checkedDateInput) {
     console.log("Select date is empty");
     return;
-  } else {
-    const task = {
-      taskName: taskNameInput.value,
-      dateInput: checkedDateInput.value,
-    };
-
-    // const taskJSON = JSON.stringify(task);
-    // localStorage.setItem("task", taskJSON);
-
-    // Get existing taskList (localStorage.getItem, JSON.parse)
-    // const taskList - ???;
-
-    // const taskArray = JSON.parse(localStorage.getItem("taskList"));
-    // if (!taskArray) {
-    //   localStorage.setItem("taskList", "[]");
-    //   taskArray = JSON.parse(localStorage.getItem("taskList"));
-    // }
-    // // Append new task to exsiting taskList
-    // taskArray.push(task);
-
-    // // Save updated taskList (localStorage.setItem, JSON.stringify)
-    // localStorage.setItem("taskList", JSON.stringify(taskArray));
   }
+  const task = {
+    taskName: taskNameInput.value,
+    dateInput: checkedDateInput.value,
+  };
+  // const taskJSON = JSON.stringify(task);
+  // localStorage.setItem("task", taskJSON);
 
-  function parseJSONFromLocalStorage(key) {
+  // Get existing taskList (localStorage.getItem, JSON.parse)
+  // const taskList - ???;
+
+  // const taskArray = JSON.parse(localStorage.getItem("taskList"));
+  // if (!taskArray) {
+  //   localStorage.setItem("taskList", "[]");
+  //   taskArray = JSON.parse(localStorage.getItem("taskList"));
+  // }
+  // // Append new task to exsiting taskList
+  // taskArray.push(task);
+
+  // // Save updated taskList (localStorage.setItem, JSON.stringify)
+  // localStorage.setItem("taskList", JSON.stringify(taskArray));
+
+  function parseJSONFromLocalStorage(key, defaultValue) {
     const json = localStorage.getItem(key);
+    if (json === null) {
+      return defaultValue;
+    }
     const data = JSON.parse(json);
     return data;
   }
@@ -82,7 +83,12 @@ formElement.onsubmit = function (event) {
     localStorage.setItem(key, json);
   }
 
-  const taskList = parseJSONFromLocalStorage("taskList");
+  function goToPage(href) {
+    location.href = href;
+  }
+
+  const taskList = parseJSONFromLocalStorage("taskList", []);
   const newTasklist = appendToArray(task, taskList); //[...taskList, task];
   stringifyJSONToLocalStorage("taskList", newTasklist);
+  goToPage("/dashboard.html");
 };
