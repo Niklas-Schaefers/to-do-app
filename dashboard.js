@@ -45,4 +45,3 @@ console.log(radioButtons);
 radioButtons.forEach(radioButton => {
   radioButton.onchange = () => console.log(radioButton.value);
 };
-
