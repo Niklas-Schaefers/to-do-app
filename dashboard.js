@@ -36,8 +36,13 @@ const tasksGroupElement = document.querySelector(".checkbox-group");
 // Append all elements in taskElement to task group
 tasksGroupElement.append(...taskListElements);
 
-// taskList[0].name
+// select all date radio buttons
+const radioButtons = document.querySelectorAll(".radio-group__input");
 
-// const heatTeeElement = createTaskElement("Tee kochen");
-// const drinkTeeElement = createTaskElement("Tee trinken");
-// tasksGroupElement.append(heatTeeElement, drinkTeeElement);
+console.log(radioButtons);
+
+// add what should onchange to these radio buttons
+radioButtons.forEach(radioButton => {
+  radioButton.onchange = () => console.log(radioButton.value);
+};
+
