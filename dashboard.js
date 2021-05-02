@@ -135,22 +135,25 @@ function stringifyJSONToLocalStorage(key, value) {
 }
 
 function applyOnClickToCheckboxes() {
-  const radioInputs = document.querySelectorAll(".checkbox-group__input");
-  radioInputs.forEach((radioInput) => {
-    radioInput.onclick = () => filterAndApplyToLocalStorage(radioInput);
+  const checkboxInputs = document.querySelectorAll(".checkbox-group__input");
+  checkboxInputs.forEach((checkboxInput) => {
+    checkboxInput.onclick = () =>
+      filterAndApplyToLocalStorage(checkboxInput.id);
   });
 }
 
 //check if items are completed or not (gets task from storage)
-function filterAndApplyToLocalStorage(inputElement) {
+function filterAndApplyToLocalStorage(id) {
+  console.log(id);
   const list = parseJSONFromLocalStorage("taskList", []);
   list.forEach((task) => {
-    if (task.name === inputElement.id) {
+    if (task.name === id) {
       task.completed = !task.completed;
     }
   });
   stringifyJSONToLocalStorage("taskList", list);
 }
+
 function removeAllChildren(parent) {
   while (parent.firstChild) {
     parent.removeChild(parent.firstChild);
