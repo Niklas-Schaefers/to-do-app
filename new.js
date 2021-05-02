@@ -45,8 +45,8 @@ formElement.onsubmit = function (event) {
     return;
   }
   const task = {
-    taskName: taskNameInput.value,
-    dateInput: checkedDateInput.value,
+    name: taskNameInput.value,
+    date: checkedDateInput.value,
     completed: false,
   };
   // const taskJSON = JSON.stringify(task);
