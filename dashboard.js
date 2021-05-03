@@ -1,83 +1,3 @@
-// function createTaskElement(task) {
-//   const label = document.createElement("label");
-//   const input = document.createElement("input");
-//   const span = document.createElement("span");
-
-//   input.type = "checkbox";
-//   input.className = "checkbox-group__input";
-
-//   span.className = "checkbox-group__title";
-//   span.innerText = task.taskName;
-//   input.checked = task.completed;
-
-//   label.append(input, span);
-//   return label;
-// }
-
-// function parseJSONFromLocalStorage(key, defaultValue) {
-//   const json = localStorage.getItem(key);
-//   if (json === null) {
-//     return defaultValue;
-//   }
-//   const data = JSON.parse(json);
-//   return data;
-// }
-
-// function stringifyJSONToLocalStorage(key, value) {
-//   const json = JSON.stringify(value);
-//   localStorage.setItem(key, json);
-// }
-
-// // // Get Array with task Objects from localStorage
-// const taskList = parseJSONFromLocalStorage("taskList", []);
-
-// // // Create taskElements array consisting of html elements base on the taskList
-// // const taskElements = taskList.map(function (task) {
-// //   return createTaskElement(task.name);
-// // });
-
-// // // Get parent element of tasks
-// // const tasksGroupElement = document.querySelector(".checkbox-group");
-
-// // // Append all elements in taskElement to task group
-// // tasksGroupElement.append(...taskListElements);
-
-// // // select all date radio buttons
-// // const radioButtons = document.querySelectorAll(".radio-group__input");
-
-// // console.log(radioButtons);
-
-// // // add what should onchange to these radio buttons
-// // radioButtons.forEach(radioButton => {
-// //   radioButton.onchange = () => console.log(radioButton.value);
-// // };
-
-// /////////////////////////////////////////////////
-// /// NEW FUNC
-// function filterAndAppendDate(TaskDate) {
-//   const tasksWithSelectedDate = taskList.filter(
-//     (task) => task.dateInput === TaskDate
-//   );
-//   const taskElements = tasksWithSelectedDate.map(function (task) {
-//     return createTaskElement(task);
-//   });
-//   const tasksGroupElement = document.querySelector(".checkbox-group");
-//   removeAllChildNodes(tasksGroupElement);
-//   tasksGroupElement.append(...taskElements);
-// }
-// // Wählt die input-Elemente aller radiobuttons
-// const dateInputs = document.querySelectorAll(".radio-group__input");
-// // Für jeden Eintrag in dieser Liste wird eine Aktion ausgeführt
-// dateInputs.forEach((dateInput) => {
-//   dateInput.onchange = () => filterAndAppendDate(dateInput.value);
-// });
-
-// function removeAllChildNodes(parent) {
-//   while (parent.firstChild) {
-//     parent.removeChild(parent.firstChild);
-//   }
-// }
-
 // Wählt die input-Elemente aller radiobuttons
 const dateInputs = document.querySelectorAll(".radio-group__input");
 // Für jeden Eintrag in dieser Liste wird eine Aktion ausgeführt
@@ -117,6 +37,13 @@ function createTaskElement(task) {
   label.append(input, span);
   return label;
 }
+
+function removeAllChildren(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
+
 // get values of the key "taskList" from the browser-storage and convert/parse this value to an object
 function parseJSONFromLocalStorage(key, defaultValue) {
   const json = localStorage.getItem(key);
@@ -137,7 +64,7 @@ function stringifyJSONToLocalStorage(key, value) {
 function applyOnClickToCheckboxes() {
   const checkboxInputs = document.querySelectorAll(".checkbox-group__input");
   checkboxInputs.forEach((checkboxInput) => {
-    checkboxInput.onclick = () =>
+    checkboxInput.onchange = () =>
       filterAndApplyToLocalStorage(checkboxInput.id);
   });
 }
@@ -152,10 +79,4 @@ function filterAndApplyToLocalStorage(id) {
     }
   });
   stringifyJSONToLocalStorage("taskList", list);
-}
-
-function removeAllChildren(parent) {
-  while (parent.firstChild) {
-    parent.removeChild(parent.firstChild);
-  }
 }
